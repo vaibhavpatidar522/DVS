@@ -1,0 +1,134 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* //nav styling--------- */
+body{
+    background: linear-gradient(45deg, #93a5cf 0%, #e4efe9 100%);
+    /* background: linear-gradient(to top, #c4c5c7 0%, #dcdddf 52%, #ebebeb 100%); */
+    /* background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%); */
+}
+#nav-bar{
+    width: 100vw;
+    height: 5.5rem;
+    /* background: linear-gradient(to top, lightgrey 0%, lightgrey 1%, #e0e0e0 26%, #efefef 48%, #d9d9d9 75%, #bcbcbc 100%); */
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+   
+    /* border-bottom: 2px solid grey; */
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+}
+.nav-img{
+    width: 70vw;
+}
+.nav-img img{
+    width: 100px;
+    height: 90px;
+    /* margin-top: 1rem; */
+    object-fit: contain;
+    margin-left: 2rem;
+}
+
+.nav-btns{
+display: flex;
+width: 20vw;
+justify-content: flex-end;
+
+}
+
+.btn{
+padding: 10px 15px;
+cursor: pointer;
+border-radius: 15px;
+border: none;
+color: white;
+background-color: #282938;
+box-shadow: 2px 2px 2px black;
+
+}
+
+.btn:hover{
+  background-color: rgb(172, 172, 172);
+  color: black;
+
+}
+
+
+
+/* -----------main section styling  */
+
+#main-section{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 70vh;
+    
+}
+.main-section-img{
+    width: 50vw;
+}
+.main-section-img img{
+    height: 50vh;
+    /* margin-top: 2rem; */
+    object-fit: contain;
+}
+
+.main-section-content{
+    display: flex;
+    flex-direction: column;
+    width: 50vw;
+    margin-right: 2rem;
+    /* text-align: left; */
+  text-align: justify;
+  line-height: 1.5;
+}
+.heading{
+   font-size: 3rem;
+   font-family: Arial, Helvetica, sans-serif;
+   text-align: center;
+}
+
+.main-section-heading{
+    margin-bottom: 0.75rem;
+    color: #282938;
+    /* color: black; */
+    text-align: left;
+}
+
+.para{
+    color:grey
+}
+
+.main-section-para{
+    margin-bottom: 0.80rem;
+    letter-spacing: 1px;
+}
+.main-section-btn{
+    width: fit-content;
+}
+
+
+/* about section  */
+.about-section,  #how-to-do-vote-section{
+    margin-left: 2rem;
+    margin-top: 3rem;
+    margin-right: 2rem;
+ 
+}
+.about-heading{
+    text-align: left;
+    font-size: 2.2rem;
+}
+
+.about-section p{
+    text-align: justify;
+    line-height: 1.8;
+    margin-top: 1rem;
+    letter-spacing: 1px;
+}

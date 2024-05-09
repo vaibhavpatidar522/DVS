@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>BEIS-Blockchain Electoral Integrity System</title>
+	<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> -->
+	
+	<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css"> -->
+    <script src="https://cdn.ethers.io/lib/ethers-5.7.1.umd.min.js"
+	type="application/javascript"></script>
+	<link rel="stylesheet" href="vote.css">
+	<link rel="stylesheet" href="index.css">
+    <script src="main.js"></script>
+</head>		
+
+<body>
+ <!-------------------------------------- nav bar ------------------------ -->
+ <header class="head">
+	<nav id="nav-bar">
+		<div class="nav-img">
+			<img src="./images/beis-high-resolution-logo-black-transparent.png" alt="Logo">
+		</div>
+		<div class="nav-btns">
+			<button class="btn"  onclick="window.location.href='vote.html'" style="margin: 50px auto ;">Vote</button>
+			<button class="btn" onclick="window.location.href='/ListVoters.html'" style="margin: 50px auto ;">List Voters</button>
+		</div>
+	</nav>
+</header>
+<section class="container">
+	
+	<div id="card-alert">
+		<h1  class="heading">
+			Unleash Your Voting Potential: Enter the Era of BEIS</h1>
+		</div> 
+		<!-- -----------------------metamask connection btn--------------- -->
+		<div class="metamask-list-container">
+		
+		 <div id="card-alert" class="card light-blue lighten-5">
+			 <p id="metamasknotification">MetaMask is not Connected</p>
+				<button onclick="connectMetamask()" class="btn vote-btn">Connect Metamask</button>
+			
+		</div>
+
+		<div id="card-alert" class="card red lighten-5">
+			<div class="card-content red-text">
+			   <p id="cand"></p>
+			 </div>
+		</div>
+<!-- -------------------list candidates---------------- -->
+
+		<div>
+			<button onclick="getAllCandidatesForVote()" class="btn vote-btn">List All Candidates</button>
+			<p id="p3"></p>
+		</div>
+<!-- -----------------vote table -------------------  -->
+		<table id="myTable">
+		   
+			<thead>
+			  <tr >
+				  <th>ID</th>
+				  <th>Election Symbol</th>
+				  <th>Candidate name</th>
+				
+				  <th>Vote</th>
+			  </tr>
+			</thead>
+	
+			<tbody>
+		   
+			</tbody>  
+
+		 
+	   </table>
+
+		<div class="container">
+			
+			<button onclick="voteStatus()" class="vote-btn">Check Voting Status</button>
+			<p id = "status"></p>
+			<p id = "time"></p>
+		</div>
+	</div>
+
+	</section>
+</body>
+
+
+<footer id="nav-bar" style="justify-content: center;">
+	<div >Copyright &copy;2024. All Rights Are Reserved</div>
+</div>
+</footer>
+
+
+</html>
