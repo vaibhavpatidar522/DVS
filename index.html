@@ -17,7 +17,8 @@
             </div>
             <div class="nav-btns">
                 <button class="btn"  onclick="window.location.href='vote.html'" style="margin: 50px auto ;">Vote</button>
-                <button class="btn" style="margin: 50px auto ;">List Voters</button>
+                <button class="btn"  onclick="window.location.href='/ListVoters.html'" style="margin: 50px auto ;">List Voters</button>
+                <button class="btn" id="loginButton" style="margin: 50px auto ;">Login</button>
             </div>
         </nav>
     </header>
@@ -52,6 +53,22 @@
 <section id="how-to-do-vote-section">
     <h2 class="about-heading">How to Cast Your Vote: A Step by Step Guide</h2>
 </section>
+
+<script>
+    var loggedIn = localStorage.getItem("loggedIn");
+    if (loggedIn) {
+        document.getElementById("loginButton").innerText = "Logout";
+    }
+
+    document.getElementById("loginButton").addEventListener("click", function() {
+        if (loggedIn) {
+            localStorage.removeItem("loggedIn");
+            window.location.href = "/";
+        } else {
+            window.location.href = "login.html";
+        }
+    });
+</script>
 </body>
 
 </html>

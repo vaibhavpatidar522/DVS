@@ -214,7 +214,16 @@ button {
 	<!-- chart  -->
 	<canvas id="pieChart" width="50vw" height="50vh"></canvas>
 
- 
+	
+    <script>
+        // Check if user is logged in
+        var loggedIn = localStorage.getItem("loggedIn");
+        if (!loggedIn) {
+            // Redirect to login page if not logged in
+            window.location.href = "login.html";
+        }
+    </script>
+	
 </body>
 
 
