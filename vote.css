@@ -1,91 +1,135 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: Arial, Helvetica, sans-serif;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
-.metamask-list-container{
-    margin-top: 3rem;
+.metamask-list-container {
+  margin-top: 3rem;
 }
 .vote-btn {
-  
- display: block;
-margin: 15px auto ;
-padding: 10px 15px;
-cursor: pointer;
-border-radius: 4px;
-border: none;
-color: white;
-background-color: black;
-box-shadow: 2px 2px 2px black;
-
+  display: block;
+  margin: 15px auto;
+  padding: 10px 15px;
+  cursor: pointer;
+  border-radius: 4px;
+  border: none;
+  color: white;
+  background-color: black;
+  box-shadow: 2px 2px 2px black;
 }
 
 .vote-btn:hover {
-    background-color: rgb(174, 174, 174);
-    color: black;
+  background-color: rgb(174, 174, 174);
+  color: black;
 }
 
 /* Paragraph styles */
 p {
-    text-align: center;
-    font-size: 1.2rem;
-    margin-top: 10px;
-    color: grey;
+  text-align: center;
+  font-size: 1.2rem;
+  margin-top: 10px;
+  color: grey;
 }
 
+#p3 {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
 
 form {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    margin-top: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 50px;
 }
 
-input[type=text],
+input[type="text"],
 select {
-    width: 30%;
-    padding: 12px 20px;
-    margin: 8px 0;
-    box-sizing: border-box;
-    border: 2px solid #ccc;
-    border-radius: 4px;
+  width: 300px;
+  /* padding: 12px 20px; */
+  margin: 8px 0;
+  box-sizing: border-box;
+  /* border: 2px solid #ccc; */
+  border-radius: 4px;
+  padding: 10px 20px;
+  background-color: #282938;
+  text-align: center;
 }
 
-input[type=number],
+input[type="number"],
 select {
-    width: 30%;
-    padding: 12px 20px;
-    margin: 8px 0;
-    box-sizing: border-box;
-    border: 2px solid #ccc;
-    border-radius: 4px;
+  width: 30%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: 2px solid #ccc;
+  border-radius: 4px;
 }
 
-input[type=submit] {
-    background-color: #a2a2a2;
-    color: white;
-    padding: 12px 20px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
+input[type="submit"] {
+  background-color: #282938;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
 }
 
-input[type=submit]:hover {
-    background-color: #c6c6c6;
+input[type="submit"]:hover {
+  background-color: #c6c6c6;
 }
 
 .container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
-    margin-top: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 50px;
 }
 
 span {
-    display: block;
-    margin-bottom: 10px;
+  display: block;
+  margin-bottom: 10px;
+}
+#pieChart {
+  width: 400px; /* Adjust the width as needed */
+  height: 400px; /* Adjust the height as needed */
+}
+
+table {
+  margin: 0 auto;
+  width: 100%; /* Adjust the width as needed */
+  /* border-collapse: collapse; */
+  color: white; /* Collapse borders */
+}
+
+/* Style the table header */
+th {
+  background-color: #282938; /* Light gray background */
+  padding: 8px; /* Add padding to header cells */
+  text-align: left;
+  border-bottom: 1 px solid white; /* Align text to the left */
+}
+
+/* Style alternating rows */
+tr {
+  border-bottom: 1 px solid white; /* Align text to the left */
+  background-color: #282938; /* Alternate row background color */
+}
+
+/* Style table cells */
+td {
+  border-bottom: 1 px solid white; /* Align text to the left */
+  padding: 8px; /* Add padding to cells */
+}
+
+#pieChart {
+  display: block;
+  margin: 0 auto;
+  width: 20%; /* Adjust the width as needed */
+  height: 20vh; /* Adjust the height as needed */
+  
 }

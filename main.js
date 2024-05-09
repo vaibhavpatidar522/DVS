@@ -240,12 +240,12 @@ const addVote = async(i) => {
           const c = await tx.wait();
           cand.innerHTML = "Vote added !!!🎉🎉";
         }catch (e) {
-          cand.innerHTML = "You aalready voted for this account!🧐";
+          cand.innerHTML = "You already voted for this account!";
         }
     }
     else {
         var cand = document.getElementById("cand");
-        cand.innerHTML = "Please connect metamask first🤧";
+        cand.innerHTML = "Please connect metamask first";
     }
 }
 
@@ -359,7 +359,8 @@ const getAllCandidates = async () => {
           statusCell.innerHTML = candidates[i].voteCount;
       }
 
-      p3.innerHTML = "The tasks are updated";
+    p3.innerHTML = "The tasks are updated";
+    
   } else {
       var p3 = document.getElementById("p3");
       p3.innerHTML = "Please connect metamask first";
