@@ -1,139 +1,91 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-   
-	<script src="main.js"></script>
-    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> -->
-    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css"> -->
     <script src="https://cdn.ethers.io/lib/ethers-5.7.1.umd.min.js" type="application/javascript"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.0/chart.min.js"></script>
-	<title>BEIS-Blockchain Electoral Integrity System</title>
-	<link rel="stylesheet" href="vote.css">
-	<link rel="stylesheet" href="index.css">
-	
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="main.js"></script>
+    <title>BEIS-Blockchain Electoral Integrity System</title>
+    <link rel="stylesheet" href="vote.css">
+    <link rel="stylesheet" href="index.css">
 </head>
-
-		
-
 <body>
-<!-- nav bar ------------------------ -->
 <header class="head">
-	<nav id="nav-bar">
-	  <div class="nav-img">
-		<img
-		  src="./images/beis-high-resolution-logo-black-transparent.png"
-		  alt="Logo"
-		/>
-	  </div>
-	  <div class="nav-btns">
-		<button
-		  class="btn"
-		  onclick="window.location.href='vote.html'"
-		  style="margin: 50px auto"
-		>
-		  Vote
-		</button>
-		<!-- <button
-		  class="btn"
-		  onclick="window.location.href='/ListVoters.html'"
-		  style="margin: 50px auto"
-		>
-		  List Voters -->
-		</button>
-		<button class="btn" id="loginButton" style="margin: 50px auto">
-		  Login
-		</button>
-	  </div>
-	</nav>
-  </header>
+    <nav id="nav-bar">
+        <div class="nav-img">
+            <img src="./images/beis-high-resolution-logo-black-transparent.png" alt="Logo" />
+        </div>
+        <div class="nav-btns">
+            <button class="btn" onclick="window.location.href='vote.html'" style="margin: 50px auto">Vote</button>
+            <button class="btn" id="loginButton" style="margin: 50px auto">Login</button>
+        </div>
+    </nav>
+</header>
+<div class="container">
+    <div class="metamask-list-container">
+        <div id="card-alert" class="card light-blue lighten-5">
+            <p id="metamasknotification">Metamask is Not Connected</p>
+            <button onclick="connectMetamask()" class="btn vote-btn">Connect Metamask</button>
+        </div>
+    </div>
+    <div>
+        <p id="votingStatus"></p>
+    </div>
 
-	<div class="container">
-		<!-- <div id="card-alert" class="card light-blue lighten-5">
-			 <div class="card-content light-blue-text">
-				<p id="loc_info">NEWS : You have done 5 actions.</p>
-			  </div>
-		 </div> -->
-		 <div class="metamask-list-container">
+    <select id="stateSelect"></select>
+    <select id="citySelect"></select>
+    <canvas id="pieChart"></canvas>
+</div>
+<div>
+    <h2 id="cityWinner">Winner Candidate from Selected City: </h2>
+    <table id="cityCandidateTable" border="1">
+        <thead>
+            <tr>
+                <th>Candidate</th>
+                <th>Votes</th>
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+    <canvas id="cityBarGraph" width="400" height="400"></canvas>
+</div>
 
-		 <div id="card-alert" class="card light-blue lighten-5">
-	
-				   <p id="metamasknotification">Metamask is Not Connected</p>
-				<button onclick="connectMetamask()" class="btn vote-btn">Connect Metamask</button>
-				</div>
-			 
-		</div>
+<div>
+    <h2 id="stateWinner">Winner Party from Selected State: </h2>
+    <table id="statePartyTable" border="1">
+        <thead>
+            <tr>
+                <th>Party</th>
+                <th>Votes</th>
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+    <canvas id="stateBarGraph" width="400px" height="400px"></canvas>
+</div>
 
-	
-	
-		<div>
-			<button onclick="getAllCandidates()" class="btn vote-btn">List All Candidates</button>
-			<p id="p3"></p>
-		</div>
+<div>
+    <h2 id="overallWinner">Overall Winner Party: </h2>
+    <table id="overallPartyTable" border="1">
+        <thead>
+            <tr>
+                <th>Party</th>
+                <th>Votes</th>
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+    <canvas id="overallWinnerGraph" width="400" height="400"></canvas>
+</div>
 
-
-
-	   <table id="myTable">
-		   
-			 <thead>
-			   <tr>
-				   <th>ID</th>
-				   <th>Election Symbol</th>
-				   <th>Candidate name</th>
-				 
-				   <th>Vote</th>
-			   </tr>
-			 </thead>
-	 
-			 <tbody>
-			
-			 </tbody>  
-
-		  
-		</table>
-	   </div>
-
-
-	   <!-- <div class="container">
-		<form method="POST" action="/vote" enctype="multipart/form-data">
-			<span>Add candidate here</span>
-			<input type = "text" name ="vote" placeholder="Add name of candidate ... ">
-			<input type="submit" value = "Add Candidate">
-		</form>
-	</div> -->
-
-	<div class="container">
-		<form method="POST" action="/vote" enctype="multipart/form-data">
-			<span class="para">Add candidate here</span>
-			<input type="text" name="name" placeholder="Add name of candidate ... " >
-			<input type="file" name="logo" accept="image/*">
-			<input type="submit" value="Add Candidate" class="btn vote-btn">
-		</form>
-	</div>
-
-	<div>
-		<p id= "votingStatus"></p>
-	</div>
-
-	<!-- chart  -->
-	<canvas id="pieChart" width="20vw" height="20vh"></canvas>
-
-	
-    <script>
-        // Check if user is logged in
-        var loggedIn = localStorage.getItem("loggedIn");
+<script>
+ var loggedIn = localStorage.getItem("loggedIn");
         if (!loggedIn) {
             // Redirect to login page if not logged in
             window.location.href = "login.html";
         }
-    </script>
-	
+</script>
 </body>
-
-
-
 <footer id="nav-bar" style="justify-content: center;">
-	<div >Copyright &copy;2024. All Rights Are Reserved</div>
-</div>
+    <div>Copyright &copy;2024. All Rights Are Reserved</div>
 </footer>
-
 </html>

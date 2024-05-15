@@ -49,10 +49,17 @@
 <!-- -------------------list candidates---------------- -->
 
 		<div>
+			<label for="aadharNumberInput">Enter your Aadhar number:</label>
+			<input type="text" id="aadharNumberInput" name="aadharNumber">
 			<button onclick="getAllCandidatesForVote()" class="btn vote-btn list-btn">List All Candidates</button>
 
 			<p id="p3"></p>
 		</div>
+		<!-- <div>
+			<p id="cand"></p>
+			<p id="status"></p>
+			<p id="time"></p>
+		</div> -->
 <!-- -----------------vote table -------------------  -->
 		<table id="myTable">
 		   
@@ -61,7 +68,7 @@
 				  <th>ID</th>
 				  <th>Election Symbol</th>
 				  <th>Candidate name</th>
-				
+				  <th>party name</th>
 				  <th>Vote</th>
 			  </tr>
 			</thead>
@@ -75,7 +82,7 @@
 
 		<div class="container">
 			
-			<button onclick="voteStatus()" class="vote-btn">Check Voting Status</button>
+			<button onclick="getVotingStatus()" class="vote-btn">Check Voting Status</button>
 			<p id = "status"></p>
 			<p id = "time"></p>
 		</div>

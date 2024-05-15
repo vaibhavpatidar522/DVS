@@ -1,0 +1,143 @@
+{
+  "stateNames": ["Andhra Pradesh", "Maharashtra", "Tamil Nadu"],
+  "cityNames": [
+    ["Vijayawada", "Visakhapatnam"],
+    ["Mumbai", "Pune"],
+    ["Chennai", "Coimbatore"]
+  ],
+  "candidateNames": [
+    [
+      ["John Doe", "Jane Smith", "Michael Johnson", "Emily Brown"],
+      ["David Lee", "Sarah Wang", "Robert Kim", "Linda Chen"]
+    ],
+    [
+      ["James Patel", "Jennifer Gupta", "Richard Shah", "Mary Desai"],
+      ["Thomas Malhotra", "Lisa Chawla", "Daniel Kumar", "Jessica Patel"]
+    ],
+    [
+      ["Christopher Raj", "Laura Kumar", "Matthew Pillai", "Amanda Nair"],
+      ["Kevin Reddy", "Helen Krishnan", "Andrew Menon", "Olivia Iyer"]
+    ]
+  ],
+  "candidateParties": [
+    [
+      ["BJP", "Congress", "AAP", "Shiv Sena"],
+      ["BJP", "Congress", "AAP", "Shiv Sena"]
+    ],
+    [
+      ["BJP", "Congress", "AAP", "Shiv Sena"],
+      ["BJP", "Congress", "AAP", "Shiv Sena"]
+    ],
+    [
+      ["BJP", "Congress", "AAP", "Shiv Sena"],
+      ["BJP", "Congress", "AAP", "Shiv Sena"]
+    ]
+  ],
+  "candidateLogos": [
+    [
+      [
+        "./public/uploads/logo1.jpg",
+        "./public/uploads/logo2.jpg",
+        "./public/uploads/logo3.jpg",
+        "./public/uploads/logo4.jpg"
+      ],
+      [
+        "./public/uploads/logo1.jpg",
+        "./public/uploads/logo2.jpg",
+        "./public/uploads/logo3.jpg",
+        "./public/uploads/logo4.jpg"
+      ]
+    ],
+    [
+      [
+        "./public/uploads/logo1.jpg",
+        "./public/uploads/logo2.jpg",
+        "./public/uploads/logo3.jpg",
+        "./public/uploads/logo4.jpg"
+      ],
+      [
+        "./public/uploads/logo1.jpg",
+        "./public/uploads/logo2.jpg",
+        "./public/uploads/logo3.jpg",
+        "./public/uploads/logo4.jpg"
+      ]
+    ],
+    [
+      [
+        "./public/uploads/logo1.jpg",
+        "./public/uploads/logo2.jpg",
+        "./public/uploads/logo3.jpg",
+        "./public/uploads/logo4.jpg"
+      ],
+      [
+        "./public/uploads/logo1.jpg",
+        "./public/uploads/logo2.jpg",
+        "./public/uploads/logo3.jpg",
+        "./public/uploads/logo4.jpg"
+      ]
+    ]
+  ],
+  "durationInMinutes": 1440,
+  "users": [
+    {
+      "name": "Alice",
+      "adharNo": "123456782",
+      "stateIndex": 0,
+      "cityIndex": 0
+    },
+    {
+      "name": "Alice2",
+      "adharNo": "123456729",
+      "stateIndex": 0,
+      "cityIndex": 0
+    },
+    {
+      "name": "Alice3",
+      "adharNo": "123456783",
+      "stateIndex": 0,
+      "cityIndex": 0
+    },
+    {
+      "name": "Alice4",
+      "adharNo": "123456784",
+      "stateIndex": 0,
+      "cityIndex": 0
+    },
+    {
+      "name": "Alic5",
+      "adharNo": "123456785",
+      "stateIndex": 0,
+      "cityIndex": 0
+    },
+    {
+      "name": "calmal",
+      "adharNo": "258258258",
+      "stateIndex": 0,
+      "cityIndex": 1
+    } , 
+    {
+      "name": "Bob",
+      "adharNo": "987654321",
+      "stateIndex": 1,
+      "cityIndex": 0
+    } , 
+    {
+      "name": "Job2",
+      "adharNo": "987654324",
+      "stateIndex": 1,
+      "cityIndex": 1
+    },
+    {
+      "name": "Job3",
+      "adharNo": "987654362",
+      "stateIndex": 1,
+      "cityIndex": 1
+    },
+    {
+      "name": "Job4",
+      "adharNo": "987654327",
+      "stateIndex": 1,
+      "cityIndex": 1
+    }
+  ]
+}

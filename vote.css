@@ -126,10 +126,26 @@ td {
   padding: 8px; /* Add padding to cells */
 }
 
-#pieChart {
+#cityBarGraph  {
   display: block;
   margin: 0 auto;
   width: 20%; 
   height: 20vh;
   
 }
+#overallWinnerGraph  {
+  display: block;
+  margin: 0 auto;
+  width: 20%; /* Adjust the width as needed */
+  height: 20vh; /* Adjust the height as needed */
+  
+}
+#stateBarGraph  {
+  display: block;
+  margin: 0 auto;
+  width: 20%; /* Adjust the width as needed */
+  height: 20vh; /* Adjust the height as needed */
+  
+}
+
+
