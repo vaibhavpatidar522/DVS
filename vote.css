@@ -129,7 +129,7 @@ td {
 #pieChart {
   display: block;
   margin: 0 auto;
-  width: 20%; /* Adjust the width as needed */
-  height: 20vh; /* Adjust the height as needed */
+  width: 20%; 
+  height: 20vh;
   
 }
