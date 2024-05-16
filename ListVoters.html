@@ -35,54 +35,68 @@
     <select id="citySelect"></select>
     <canvas id="pieChart"></canvas>
 </div>
-<div>
-    <h2 id="cityWinner">Winner Candidate from Selected City: </h2>
-    <table id="cityCandidateTable" border="1">
-        <thead>
-            <tr>
-                <th>Candidate</th>
-                <th>Votes</th>
-            </tr>
-        </thead>
-        <tbody></tbody>
-    </table>
-    <canvas id="cityBarGraph" width="400" height="400"></canvas>
+
+<div class="table-graph-container">
+    <div class="graph">
+        <canvas id="cityBarGraph"></canvas>
+    </div>
+    <div class="table">
+        <h2 id="cityWinner">Winner Candidate from Selected City: </h2>
+        <table id="cityCandidateTable" border="1">
+            <thead>
+                <tr>
+                    <th>Candidate</th>
+                    <th>Party</th>
+                    <th>Votes</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </div>
 </div>
 
-<div>
-    <h2 id="stateWinner">Winner Party from Selected State: </h2>
-    <table id="statePartyTable" border="1">
-        <thead>
-            <tr>
-                <th>Party</th>
-                <th>Votes</th>
-            </tr>
-        </thead>
-        <tbody></tbody>
-    </table>
-    <canvas id="stateBarGraph" width="400px" height="400px"></canvas>
+<div class="table-graph-container">
+    <div class="graph">
+        <canvas id="stateBarGraph"></canvas>
+    </div>
+    <div class="table">
+        <h2 id="stateWinner">Winner Party from Selected State: </h2>
+        <table id="statePartyTable" border="1">
+            <thead>
+                <tr>
+                    <th>Party</th>
+                    <th>Votes</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </div>
 </div>
 
-<div>
-    <h2 id="overallWinner">Overall Winner Party: </h2>
-    <table id="overallPartyTable" border="1">
-        <thead>
-            <tr>
-                <th>Party</th>
-                <th>Votes</th>
-            </tr>
-        </thead>
-        <tbody></tbody>
-    </table>
-    <canvas id="overallWinnerGraph" width="400" height="400"></canvas>
+<div class="table-graph-container">
+    <div class="graph">
+        <canvas id="overallWinnerGraph"></canvas>
+    </div>
+    <div class="table">
+        <h2 id="overallWinner">Overall Winner Party: </h2>
+        <table id="overallPartyTable" border="1">
+            <thead>
+                <tr>
+                    <th>Party</th>
+                    <th>Votes</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </div>
 </div>
 
 <script>
- var loggedIn = localStorage.getItem("loggedIn");
-        if (!loggedIn) {
-            // Redirect to login page if not logged in
-            window.location.href = "login.html";
-        }
+    var loggedIn = localStorage.getItem("loggedIn");
+    if (!loggedIn) {
+        // Redirect to login page if not logged in
+        window.location.href = "login.html";
+    }
 </script>
 </body>
 <footer id="nav-bar" style="justify-content: center;">
