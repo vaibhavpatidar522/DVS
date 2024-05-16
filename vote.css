@@ -8,6 +8,7 @@
 .metamask-list-container {
   margin-top: 3rem;
 }
+
 .vote-btn {
   display: block;
   margin: 15px auto;
@@ -25,17 +26,11 @@
   color: black;
 }
 
-/* Paragraph styles */
 p {
   text-align: center;
   font-size: 1.2rem;
   margin-top: 10px;
   color: grey;
-}
-
-#p3 {
-  margin-top: 2rem;
-  margin-bottom: 2rem;
 }
 
 form {
@@ -49,14 +44,13 @@ form {
 input[type="text"],
 select {
   width: 300px;
-  /* padding: 12px 20px; */
   margin: 8px 0;
   box-sizing: border-box;
-  /* border: 2px solid #ccc; */
   border-radius: 4px;
   padding: 10px 20px;
   background-color: #282938;
   text-align: center;
+  color: white;
 }
 
 input[type="number"],
@@ -94,41 +88,39 @@ span {
   display: block;
   margin-bottom: 10px;
 }
+
 #pieChart {
-  width: 400px; /* Adjust the width as needed */
-  height: 400px; /* Adjust the height as needed */
+  width: 400px; 
+  height: 400px; 
 }
 
 table {
   margin: 0 auto;
-  width: 100%; /* Adjust the width as needed */
-  /* border-collapse: collapse; */
-  color: white; /* Collapse borders */
+  width: 100%;
+  color: white; 
 }
 
-/* Style the table header */
 th {
-  background-color: #282938; /* Light gray background */
-  padding: 8px; /* Add padding to header cells */
+  background-color: #282938;
+  padding: 8px;
   text-align: left;
-  border-bottom: 1 px solid white; /* Align text to the left */
+  border-bottom: 1px solid white; 
 }
 
-/* Style alternating rows */
 tr {
-  border-bottom: 1 px solid white; /* Align text to the left */
-  background-color: #282938; /* Alternate row background color */
+  border-bottom: 1px solid white;
+  background-color: #282938; 
 }
 
-/* Style table cells */
 td {
-  border-bottom: 1 px solid white; /* Align text to the left */
-  padding: 8px; /* Add padding to cells */
+  border-bottom: 1px solid white;
+  padding: 8px;
 }
 
-#cityBarGraph  {
+#cityBarGraph, #overallWinnerGraph, #stateBarGraph {
   display: block;
   margin: 0 auto;
+<<<<<<< HEAD
   width: 20%; 
   height: 20vh;
   
@@ -146,6 +138,23 @@ td {
   width: 20%; /* Adjust the width as needed */
   height: 20vh; /* Adjust the height as needed */
   
+=======
+  width: 100%;
+  height: 40vh; 
+>>>>>>> c985359166379d25ff23dc7553278309c3594725
 }
 
+.table-graph-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin: 20px 0;
+}
 
+.table {
+  width: 45%;
+}
+
+.graph {
+  width: 45%;
+}

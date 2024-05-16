@@ -581,6 +581,7 @@ async function updateCityGraph() {
   try {
     const cityVotes = await contractInstance.getCandidateVotesInCity(stateIndex, cityIndex);
     const candidateNames = cityVotes[0];
+    const candidateParty = cityVotes[1];
     const candidateVotes = cityVotes[2].map(votes => parseInt(votes));
 
     // Update city candidate votes table
@@ -589,8 +590,10 @@ async function updateCityGraph() {
     for (let i = 0; i < candidateNames.length; i++) {
         const row = cityCandidateTable.insertRow();
         const candidateCell = row.insertCell();
+        const partyCell = row.insertCell();
         const votesCell = row.insertCell();
         candidateCell.innerHTML = candidateNames[i];
+        partyCell.innerHTML = candidateParty[i];
         votesCell.innerHTML = candidateVotes[i];
     }
 
