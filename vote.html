@@ -1,117 +1,127 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <title>BEIS-Blockchain Electoral Integrity System</title>
-	<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> -->
-	
-	<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css"> -->
-    <script src="https://cdn.ethers.io/lib/ethers-5.7.1.umd.min.js"
-	type="application/javascript"></script>
-	<link rel="stylesheet" href="vote.css">
-	<link rel="stylesheet" href="index.css">
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> -->
+
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css"> -->
+    <script
+      src="https://cdn.ethers.io/lib/ethers-5.7.1.umd.min.js"
+      type="application/javascript"
+    ></script>
+    <link rel="stylesheet" href="index.css" />
+    <link rel="stylesheet" href="vote.css" />
     <script src="main.js"></script>
-</head>		
+  </head>
 
-<body>
- <!-------------------------------------- nav bar ------------------------ -->
- <header class="head">
-	<nav id="nav-bar">
-		<div class="nav-img">
-			<img src="./images/beis-high-resolution-logo-black-transparent.png" alt="Logo">
+  <body>
+    <!-------------------------------------- nav bar ------------------------ -->
+    <!-- nav bar and main section------------------------ -->
+
+    <nav class="nav">
+      <img
+        src="./images/beis-high-resolution-logo-black-transparent.png"
+        alt="Bankist logo"
+        class="nav__logo"
+        id="logo"
+      />
+      <ul class="nav__links">
+        <li class="nav__item">
+          <a class="nav__link nav__link--btn" href="vote.html">Vote</a>
+        </li>
+        <li class="nav__item">
+          <a class="nav__link nav__link--btn" id="loginButton" href="#"
+            >Login</a
+          >
+        </li>
+      </ul>
+    </nav>
+
+    <!-- ---------------main section for voting ------------- -->
+    <section class="containerBox" style="padding: 0rem">
+      <!-- -----------------------metamask connection btn--------------- -->
+      <div id="inputAndConnectr">
+        <div class="metamask-list-container votingCredCards">
+          <div id="card-alert" class="card light-blue lighten-5">
+            <p id="metamasknotification">MetaMask is not Connected</p>
+            <button onclick="connectMetamask()" class="btn vote-btn">
+              Connect Metamask
+            </button>
+          </div>
+
+          <div id="card-alert" class="card red lighten-5 ">
+            <div class="card-content red-text">
+              <p id="cand"></p>
+            </div>
+          </div>
 		</div>
-		<div class="nav-btns">
-			<button class="btn"  onclick="window.location.href='vote.html'" style="margin: 50px auto ;">Vote</button>
-			<!-- <button class="btn" onclick="window.location.href='/ListVoters.html'" style="margin: 50px auto ;">List Voters</button> -->
-			<button class="btn" id="loginButton" style="margin: 50px auto ;">Login</button>
-		</div>
-	</nav>
-</header>
-<section class="container">
-	
-	<div id="card-alert">
-		<h1  class="heading">
-			Unleash Your Voting Potential: Enter the Era of BEIS</h1>
-		</div> 
-		<!-- -----------------------metamask connection btn--------------- -->
-		<div class="metamask-list-container">
-		
-		 <div id="card-alert" class="card light-blue lighten-5">
-			 <p id="metamasknotification">MetaMask is not Connected</p>
-				<button onclick="connectMetamask()" class="btn vote-btn">Connect Metamask</button>
-			
-		</div>
 
-		<div id="card-alert" class="card red lighten-5">
-			<div class="card-content red-text">
-			   <p id="cand"></p>
-			 </div>
-		</div>
-<!-- -------------------list candidates---------------- -->
+          <!-- -------------------enter aadhar candidates---------------- -->
+          <div class="aadharEnter votingCredCards">
+            <label for="aadharNumberInput">Enter your Aadhar number:</label>
+            <input type="text" id="aadharNumberInput" name="aadharNumber" />
+          </div>
 
-		<div>
-			<label for="aadharNumberInput">Enter your Aadhar number:</label>
-			<input type="text" id="aadharNumberInput" name="aadharNumber">
-			<button onclick="getAllCandidatesForVote()" class="btn vote-btn list-btn">List All Candidates</button>
+          <!-- ----------------list candidates   -->
+          <div class="listCands votingCredCards">
+            <button onclick="getAllCandidatesForVote()" class="btn list-btn vote-btn">
+              List All Candidates
+            </button>
 
-			<p id="p3"></p>
-		</div>
-		<!-- <div>
-			<p id="cand"></p>
-			<p id="status"></p>
-			<p id="time"></p>
-		</div> -->
-<!-- -----------------vote table -------------------  -->
-		<table id="myTable">
-		   
-			<thead>
-			  <tr >
-				  <th>ID</th>
-				  <th>Election Symbol</th>
-				  <th>Candidate name</th>
-				  <th>party name</th>
-				  <th>Vote</th>
-			  </tr>
-			</thead>
-	
-			<tbody>
-		   
-			</tbody>  
+            <p id="p3"></p>
+          </div>
+        </div>
+        <!-- <div>
+		<p id="cand"></p>
+		<p id="status"></p>
+		<p id="time"></p>
+	</div> -->
+        <!-- -----------------vote table -------------------  -->
+        <table id="myTable">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Election Symbol</th>
+              <th>Candidate Name</th>
+              <th>Party name</th>
+              <th>Add Your Vote</th>
+            </tr>
+          </thead>
 
-		 
-	   </table>
+          <tbody></tbody>
+        </table>
 
-		<div class="container">
-			
-			<button onclick="getVotingStatus()" class="vote-btn">Check Voting Status</button>
-			<p id = "status"></p>
-			<p id = "time"></p>
-		</div>
-	</div>
+        <!-- <div class="container">
+          <button onclick="getVotingStatus()" class="vote-btn">
+            Check Voting Status
+          </button>
+          <p id="status"></p>
+          <p id="time"></p>
+        </div> -->
+      </div>
+    </section>
+    <script>
+      var loggedIn = localStorage.getItem("loggedIn");
+      if (loggedIn) {
+        document.getElementById("loginButton").innerText = "Logout";
+      }
 
-	</section>
-	<script>
-        var loggedIn = localStorage.getItem("loggedIn");
-        if (loggedIn) {
-            document.getElementById("loginButton").innerText = "Logout";
-        }
-
-        document.getElementById("loginButton").addEventListener("click", function() {
-            if (loggedIn) {
-                localStorage.removeItem("loggedIn");
-                window.location.href = "/";
-            } else {
-                window.location.href = "login.html";
-            }
+      document
+        .getElementById("loginButton")
+        .addEventListener("click", function () {
+          if (loggedIn) {
+            localStorage.removeItem("loggedIn");
+            window.location.href = "/";
+          } else {
+            window.location.href = "login.html";
+          }
         });
     </script>
+  </body>
 
-</body>
-
-
-<footer id="nav-bar" style="justify-content: center;">
-	<div >Copyright &copy;2024. All Rights Are Reserved</div>
-</div>
-</footer>
-
-
+  <footer class="footer">
+    <p class="footer__copyright">
+      &copy; Copyright 2024, All the Rights are Reserved!
+    </p>
+  </footer>
 </html>

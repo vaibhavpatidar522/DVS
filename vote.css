@@ -5,26 +5,7 @@
   font-family: Arial, Helvetica, sans-serif;
 }
 
-.metamask-list-container {
-  margin-top: 3rem;
-}
 
-.vote-btn {
-  display: block;
-  margin: 15px auto;
-  padding: 10px 15px;
-  cursor: pointer;
-  border-radius: 4px;
-  border: none;
-  color: white;
-  background-color: black;
-  box-shadow: 2px 2px 2px black;
-}
-
-.vote-btn:hover {
-  background-color: rgb(174, 174, 174);
-  color: black;
-}
 
 p {
   text-align: center;
@@ -76,18 +57,61 @@ input[type="submit"]:hover {
   background-color: #c6c6c6;
 }
 
-.container {
+.containerBox {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  /* align-items: center; */
   justify-content: space-between;
   margin-top: 50px;
+  gap: 10rem;
 }
 
 span {
   display: block;
   margin-bottom: 10px;
 }
+
+#inputAndConnectr {
+  display: flex;
+  justify-content: space-around;
+  gap: 3rem;
+
+ 
+}
+
+/* Card styles */
+.votingCredCards {
+ 
+  background-color: #ffffff;
+  padding: 10px;
+  flex: 1;
+  border-radius: 10px;
+  margin-top: 3rem;
+  box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  
+  height: auto;
+  transition: height 0.3s ease; }
+
+
+#card-alert, .aadharEnter, .listCands {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+ align-items: center;
+ 
+}
+
+#card-alert p, .aadharEnter label ,#p3{
+  font-size: 2rem;
+  
+}
+
+.vote-btn{
+  width: fit-content;
+  
+}
+
 
 #pieChart {
   width: 400px; 
@@ -96,8 +120,9 @@ span {
 
 table {
   margin: 0 auto;
-  width: 100%;
+  width: 50vw;
   color: white; 
+  font-size: 1.5rem;
 }
 
 th {
@@ -120,28 +145,8 @@ td {
 #cityBarGraph, #overallWinnerGraph, #stateBarGraph {
   display: block;
   margin: 0 auto;
-<<<<<<< HEAD
-  width: 20%; 
-  height: 20vh;
-  
-}
-#overallWinnerGraph  {
-  display: block;
-  margin: 0 auto;
-  width: 20%; /* Adjust the width as needed */
-  height: 20vh; /* Adjust the height as needed */
-  
-}
-#stateBarGraph  {
-  display: block;
-  margin: 0 auto;
-  width: 20%; /* Adjust the width as needed */
-  height: 20vh; /* Adjust the height as needed */
-  
-=======
   width: 100%;
   height: 40vh; 
->>>>>>> c985359166379d25ff23dc7553278309c3594725
 }
 
 .table-graph-container {
@@ -158,3 +163,9 @@ td {
 .graph {
   width: 45%;
 }
+
+
+
+
+/* new csss---------------- */
+

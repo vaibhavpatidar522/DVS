@@ -1,111 +1,138 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Login</title>
-    <link rel="stylesheet" href="index.css"> <!-- Include your existing CSS file -->
+    <link rel="stylesheet" href="index.css" />
+    <!-- Include your existing CSS file -->
     <style>
-        /* Additional CSS for login page */
-        body {
-            background-color: #f5f7fa; /* Match background color with other pages */
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-            font-family: Arial, Helvetica, sans-serif;
-        }
+      /* Additional CSS for login page */
+      body {
+        background-color: #f3f3f3;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+        /* font-family: Arial, Helvetica, sans-serif; */
+        font-family: "Poppins", sans-serif;
+      }
 
-        form {
-            background-color: #ffffff;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-            width: 300px;
-            text-align: center;
-        }
+      form {
+        background-color: #ffffff;
+        padding: 20px;
+        border-radius: 10px;
+        margin-top: 3rem;
+        box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.1);
+        width: 600px;
+        text-align: center;
+      }
 
-        label {
-            display: block;
-            margin-bottom: 10px;
-            font-weight: bold;
-        }
+      label {
+        display: block;
+        margin-bottom: 10px;
+        font-weight: bold;
+        text-align: left;
+        font-size: 1.5rem;
+      }
 
-        input[type="text"],
-        input[type="password"] {
-            width: 100%;
-            padding: 10px;
-            margin-bottom: 20px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            box-sizing: border-box;
-        }
+      input[type="text"],
+      input[type="password"] {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 20px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        box-sizing: border-box;
+      }
 
-        input[type="submit"] {
-            width: 100%;
-            padding: 10px;
-            border: none;
-            border-radius: 5px;
-            background-color: #282938;
-            color: #fff;
-            cursor: pointer;
-            transition: background-color 0.3s;
-        }
+      input[type="submit"] {
+        display: inline-block;
+        background-color: #5ec576;
+        font-size: 1.6rem;
+        font-family: inherit;
+        font-weight: 500;
+        border: none;
+        padding: 1.25rem 4.5rem;
+        border-radius: 10rem;
+        cursor: pointer;
+        transition: all 0.3s;
+      }
 
-        input[type="submit"]:hover {
-            background-color: #40445a;
-        }
+      input[type="submit"]:hover {
+        background-color: #4bbb7d;
+      }
 
-        .error-message {
-            color: red;
-            margin-top: 10px;
-        }
+      .error-message {
+        color: red;
+        margin-top: 10px;
+      }
 
-        /* Placeholder text styling */
-        .placeholder-text {
-            color: #888;
-            font-style: italic;
-        }
+      /* Placeholder text styling */
+      .placeholder-text {
+        color: #444;
+        /* font-style: italic; */
+        text-align: left;
+        font-size: 2rem;
+      }
+
+      .loginFormHeading {
+        display: flex;
+        flex-direction: column;
+      }
+
+      h2 {
+        font-size: 5rem;
+        line-height: 1.35;
+      }
     </style>
-</head>
+  </head>
 
-<body>
+  <body>
+    <h2>Welcome, Admin!</h2>
     <form id="loginForm">
-        <h2>Welcome, Admin!</h2>
-        <p class="placeholder-text">Enter your credentials to login:</p>
-        <label for="username">Username:</label>
-        <input type="text" id="username" name="username">
-        <label for="password">Password:</label>
-        <input type="password" id="password" name="password">
-        <input type="submit" value="Login">
-        <p class="error-message" id="errorMessage"></p>
+      <div class="loginFormHeading">
+        <p class="placeholder-text"></p>
+      </div>
+      <label for="username">Username:</label>
+      <input type="text" id="username" name="username" />
+      <label for="password">Password:</label>
+      <input type="password" id="password" name="password" />
+      <input type="submit" value="Login" />
+      <p class="error-message" id="errorMessage"></p>
     </form>
-
+    <footer class="footer">
+      <p class="footer__copyright">
+        &copy; Copyright 2024, All the Rights are Reserved!
+      </p>
+    </footer>
     <script>
-        document.getElementById("loginForm").addEventListener("submit", function(event) {
-            event.preventDefault();
-            var username = document.getElementById("username").value;
-            var password = document.getElementById("password").value;
+      document
+        .getElementById("loginForm")
+        .addEventListener("submit", function (event) {
+          event.preventDefault();
+          var username = document.getElementById("username").value;
+          var password = document.getElementById("password").value;
 
-            // Hardcoded password check
-            if (password === "admin" && username === "admin") {
-                // Store login state in localStorage
-                localStorage.setItem("loggedIn", true);
-                // Redirect to ListVoters page
-                window.location.href = "ListVoters.html";
-            } else {
-                // Display error message
-                document.getElementById("errorMessage").textContent = "Incorrect password. Please try again.";
-            }
+          // Hardcoded password check
+          if (password === "admin" && username === "admin") {
+            // Store login state in localStorage
+            localStorage.setItem("loggedIn", true);
+            // Redirect to ListVoters page
+            window.location.href = "ListVoters.html";
+          } else {
+            // Display error message
+            document.getElementById("errorMessage").textContent =
+              "Incorrect password. Please try again.";
+          }
         });
 
-        var loggedIn = localStorage.getItem("loggedIn");
-        if (loggedIn) {
-            window.location.href = "vote.html";
-        }
+      var loggedIn = localStorage.getItem("loggedIn");
+      if (loggedIn) {
+        window.location.href = "vote.html";
+      }
     </script>
-</body>
-
+  </body>
 </html>
