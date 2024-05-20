@@ -1,7 +1,7 @@
 let states = ["Andhra Pradesh", "Maharashtra", "Tamil Nadu"];
 
 let WALLET_CONNECTED = "";
-let contractAddress = "0xf871A0a5e21B6e5D027dE609e48bc7C1530da0C3";
+let contractAddress = "0x170f5e1f85dFd49ddce773D47AA859c1243EE8A1";
 let contractAbi = [
   {
     inputs: [

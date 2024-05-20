@@ -2,8 +2,8 @@
   "_format": "hh-sol-cache-2",
   "files": {
     "D:\\DVS\\contracts\\Voting.sol": {
-      "lastModificationDate": 1716044318449,
-      "contentHash": "b929735adfeff2c966371d7cea246b36",
+      "lastModificationDate": 1716045502426,
+      "contentHash": "17ab2a77c327f721a9b27ddb8756a77e",
       "sourceName": "contracts/Voting.sol",
       "solcConfig": {
         "version": "0.8.11",

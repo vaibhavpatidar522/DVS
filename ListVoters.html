@@ -1,105 +1,128 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <script src="https://cdn.ethers.io/lib/ethers-5.7.1.umd.min.js" type="application/javascript"></script>
+  <head>
+    <script
+      src="https://cdn.ethers.io/lib/ethers-5.7.1.umd.min.js"
+      type="application/javascript"
+    ></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="main.js"></script>
     <title>BEIS-Blockchain Electoral Integrity System</title>
-    <link rel="stylesheet" href="vote.css">
-    <link rel="stylesheet" href="index.css">
-</head>
-<body>
-<header class="head">
-    <nav id="nav-bar">
-        <div class="nav-img">
-            <img src="./images/beis-high-resolution-logo-black-transparent.png" alt="Logo" />
-        </div>
-        <div class="nav-btns">
-            <button class="btn" onclick="window.location.href='vote.html'" style="margin: 50px auto">Vote</button>
-            <button class="btn" id="loginButton" style="margin: 50px auto">Login</button>
-        </div>
+    <link rel="stylesheet" href="vote.css" />
+    <link rel="stylesheet" href="index.css" />
+  </head>
+  <body>
+    <nav class="nav">
+      <img
+        src="./images/beis-high-resolution-logo-black-transparent.png"
+        alt="Bankist logo"
+        class="nav__logo"
+        id="logo"
+      />
+      <ul class="nav__links">
+        <li class="nav__item">
+          <a class="nav__link nav__link--btn" href="vote.html">Vote</a>
+        </li>
+        <li class="nav__item">
+          <a class="nav__link nav__link--btn" id="loginButton" href="#"
+            >Login</a
+          >
+        </li>
+      </ul>
     </nav>
-</header>
-<div class="container">
-    <div class="metamask-list-container">
-        <div id="card-alert" class="card light-blue lighten-5">
+    <div class="maindiv">
+      <div class="containerBox mainsubdiv">
+        <div class="metamask-list-container">
+          <div id="card-alert" class="card light-blue lighten-5">
             <p id="metamasknotification">Metamask is Not Connected</p>
-            <button onclick="connectMetamask()" class="btn vote-btn">Connect Metamask</button>
+            <button onclick="connectMetamask()" class="btn vote-btn">
+              Connect Metamask
+            </button>
+          </div>
         </div>
-    </div>
-    <div>
+      </div>
+      <div class="mainsubdiv">
         <p id="votingStatus"></p>
+      </div>
+      <div class="selectionCityAndState mainsubdiv">
+        <div class="labelSelection">
+          <label>Select State</label>
+          <select id="stateSelect"></select>
+        </div>
+        <div class="labelSelection">
+          <label>Select City</label>
+          <select id="citySelect"></select>
+        </div>
+        <!-- <canvas id="pieChart"></canvas> -->
+      </div>
     </div>
 
-    <select id="stateSelect"></select>
-    <select id="citySelect"></select>
-    <canvas id="pieChart"></canvas>
-</div>
-
-<div class="table-graph-container">
-    <div class="graph">
+    <div class="table-graph-container" style="margin-top: 2rem">
+      <div class="graph">
         <canvas id="cityBarGraph"></canvas>
-    </div>
-    <div class="table">
-        <h2 id="cityWinner">Winner Candidate from Selected City: </h2>
+      </div>
+      <div class="table">
+        <h2 id="cityWinner">Winner Candidate from Selected City:</h2>
         <table id="cityCandidateTable" border="1">
-            <thead>
-                <tr>
-                    <th>Candidate</th>
-                    <th>Party</th>
-                    <th>Votes</th>
-                </tr>
-            </thead>
-            <tbody></tbody>
+          <thead>
+            <tr>
+              <th>Candidate</th>
+              <th>Party</th>
+              <th>Votes</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
         </table>
+      </div>
     </div>
-</div>
 
-<div class="table-graph-container">
-    <div class="graph">
+    <div class="table-graph-container">
+      <div class="graph">
         <canvas id="stateBarGraph"></canvas>
-    </div>
-    <div class="table">
-        <h2 id="stateWinner">Winner Party from Selected State: </h2>
+      </div>
+      <div class="table">
+        <h2 id="stateWinner">Winner Party from Selected State:</h2>
         <table id="statePartyTable" border="1">
-            <thead>
-                <tr>
-                    <th>Party</th>
-                    <th>Votes</th>
-                </tr>
-            </thead>
-            <tbody></tbody>
+          <thead>
+            <tr>
+              <th>Party</th>
+              <th>Votes</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
         </table>
+      </div>
     </div>
-</div>
 
-<div class="table-graph-container">
-    <div class="graph">
+    <div class="table-graph-container">
+      <div class="graph">
         <canvas id="overallWinnerGraph"></canvas>
-    </div>
-    <div class="table">
-        <h2 id="overallWinner">Overall Winner Party: </h2>
+      </div>
+      <div class="table">
+        <h2 id="overallWinner">Overall Winner Party:</h2>
         <table id="overallPartyTable" border="1">
-            <thead>
-                <tr>
-                    <th>Party</th>
-                    <th>Votes</th>
-                </tr>
-            </thead>
-            <tbody></tbody>
+          <thead>
+            <tr>
+              <th>Party</th>
+              <th>Votes</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
         </table>
+      </div>
     </div>
-</div>
 
-<script>
-    var loggedIn = localStorage.getItem("loggedIn");
-    if (!loggedIn) {
+    <script>
+      var loggedIn = localStorage.getItem("loggedIn");
+      if (!loggedIn) {
         // Redirect to login page if not logged in
         window.location.href = "login.html";
-    }
-</script>
-</body>
-<footer id="nav-bar" style="justify-content: center;">
-    <div>Copyright &copy;2024. All Rights Are Reserved</div>
-</footer>
+      }
+    </script>
+  </body>
+  <footer class="footer">
+    <p class="footer__copyright">
+      &copy; Copyright 2024, All the Rights are Reserved!
+    </p>
+  </footer>
 </html>

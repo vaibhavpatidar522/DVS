@@ -169,3 +169,45 @@ td {
 
 /* new csss---------------- */
 
+.selectionCityAndState{
+display: flex;
+flex-direction: column;
+justify-content: space-around;
+align-items: center;
+}
+
+
+.maindiv{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  gap: 4rem;
+}
+
+.labelSelection{
+  display: flex;
+  justify-content: space-between;
+  gap: 4rem;
+  align-items: center;
+}
+
+.labelSelection label{
+  font-size: 1.7rem;
+}
+
+.labelSelection select{
+  width: 10vw;
+}
+
+.mainsubdiv{
+  
+  background-color: #ffffff;
+  padding: 10px;
+  flex: 1;
+  border-radius: 10px;
+  margin-top: 3rem;
+  box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  
+  height: auto;
+  transition: height 0.3s ease; }
