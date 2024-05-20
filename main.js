@@ -731,10 +731,10 @@ const getAllCandidatesForVote = async () => {
         buttonCell.appendChild(voteButton);
       }
 
-      const stateName = states[user.stateIndex].name;
-      const cityName = states[user.stateIndex].cities[user.cityIndex].name;
+      // const stateName = states[user.stateIndex].name;
+      // const cityName = states[user.stateIndex].cities[user.cityIndex].name;
 
-      p3.innerHTML = `User: ${user.name}, State: ${stateName}, City: ${cityName}`;
+      p3.innerHTML = `List of candidates fatcched successfully . `;
     } catch (error) {
       console.error(error);
       p3.innerHTML = "Failed to retrieve candidates. Please try again.";
