@@ -24,8 +24,11 @@
           <a class="nav__link nav__link--btn" href="vote.html">Vote</a>
         </li>
         <li class="nav__item">
-          <a class="nav__link nav__link--btn" id="loginButton" href="#"
-            >Login</a
+          <a
+            class="nav__link nav__link--btn"
+            id="loginButton"
+            href="/login.html"
+            >Log Out</a
           >
         </li>
       </ul>
@@ -118,6 +121,11 @@
         // Redirect to login page if not logged in
         window.location.href = "login.html";
       }
+      document
+        .getElementById("loginButton")
+        .addEventListener("click", function () {
+          localStorage.clear();
+        });
     </script>
   </body>
   <footer class="footer">

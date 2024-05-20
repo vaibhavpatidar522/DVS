@@ -30,7 +30,7 @@
           <a class="nav__link nav__link--btn" href="vote.html">Vote</a>
         </li>
         <li class="nav__item">
-          <a class="nav__link nav__link--btn" id="loginButton" href="#"
+          <a class="nav__link nav__link--btn" id="loginButton" href="/login.html"
             >Login</a
           >
         </li>
@@ -103,19 +103,10 @@
     <script>
       var loggedIn = localStorage.getItem("loggedIn");
       if (loggedIn) {
-        document.getElementById("loginButton").innerText = "Logout";
+        localStorage.clear();
       }
 
-      document
-        .getElementById("loginButton")
-        .addEventListener("click", function () {
-          if (loggedIn) {
-            localStorage.removeItem("loggedIn");
-            window.location.href = "/";
-          } else {
-            window.location.href = "login.html";
-          }
-        });
+     
     </script>
   </body>
 
