@@ -734,14 +734,14 @@ const getAllCandidatesForVote = async () => {
       // const stateName = states[user.stateIndex].name;
       // const cityName = states[user.stateIndex].cities[user.cityIndex].name;
 
-      p3.innerHTML = `List of candidates fatcched successfully . `;
+      p3.innerHTML = `List of Candidates Fetched Successfully. `;
     } catch (error) {
       console.error(error);
-      p3.innerHTML = "Failed to retrieve candidates. Please try again.";
+      p3.innerHTML = "Failed to Retrieve Candidates. Please Try Again.";
     }
   } else {
     var p3 = document.getElementById("p3");
-    p3.innerHTML = "Please connect to MetaMask first.";
+    p3.innerHTML = "Please Connect to MetaMask First.";
   }
 };
 
