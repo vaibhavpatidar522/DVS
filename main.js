@@ -1,7 +1,7 @@
 let states = ["Andhra Pradesh", "Maharashtra", "Tamil Nadu"];
 
 let WALLET_CONNECTED = "";
-let contractAddress = "0x170f5e1f85dFd49ddce773D47AA859c1243EE8A1";
+let contractAddress = "0x86bd203A0CC7C0196A8280cAA4E7B3b4CE31780e";
 let contractAbi = [
   {
     inputs: [
@@ -736,8 +736,14 @@ const getAllCandidatesForVote = async () => {
 
       p3.innerHTML = `List of candidates fatcched successfully . `;
     } catch (error) {
-      console.error(error);
+      console.log(error);
       p3.innerHTML = "Failed to retrieve candidates. Please try again.";
+      const table = document
+        .getElementById("myTable")
+        .getElementsByTagName("tbody")[0];
+      table.innerHTML = "";
+
+      console.log("table cleared");
     }
   } else {
     var p3 = document.getElementById("p3");

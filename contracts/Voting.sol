@@ -380,14 +380,20 @@ contract Voting {
         return (finalParties, finalVotes, totalVoted, notVoted);
     }
 
-    function getCandidatesForVoter(string memory _adharNo) public view returns (User memory, Candidate[] memory) {
-        require(users[_adharNo].stateIndex < states.length, "Invalid state index for user");
-        require(users[_adharNo].cityIndex < states[users[_adharNo].stateIndex].cities.length, "Invalid city index for user");
-
-        User memory user = users[_adharNo];
-        City memory city = states[user.stateIndex].cities[user.cityIndex];
-        return (user, city.candidates);
+function getCandidatesForVoter(string memory _adharNo) public view returns (User memory, Candidate[] memory) {
+    // Check if the user exists
+    if (bytes(users[_adharNo].name).length == 0) {
+        revert("User not found");
     }
+
+    // Proceed if the user exists
+    require(users[_adharNo].stateIndex < states.length, "Invalid state index for user");
+    require(users[_adharNo].cityIndex < states[users[_adharNo].stateIndex].cities.length, "Invalid city index for user");
+
+    User memory user = users[_adharNo];
+    City memory city = states[user.stateIndex].cities[user.cityIndex];
+    return (user, city.candidates);
+}
 
     function vote(string memory _adharNo, uint256 _stateIndex, uint256 _cityIndex, uint256 _candidateIndex) external {
         require(voters[_adharNo] == false, "User has already voted with this Aadhar number");
